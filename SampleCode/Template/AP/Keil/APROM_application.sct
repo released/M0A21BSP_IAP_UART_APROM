@@ -1,0 +1,14 @@
+LOAD_ROM_1  0x002800 0x5800
+{
+	APROM_application.bin  0x002800 0x5800
+	{
+		startup_M0A21.o (RESET, +FIRST)
+        .ANY (+RO)
+	}
+	
+	SRAM  0x20000000 0xFFC
+	{
+		* (+RW, +ZI)
+	}
+}
+
